@@ -8,13 +8,7 @@ chosen=$(echo -e "$options" | rofi -theme ~/.cache/wal/rofi-oneline.rasi -dmenu 
 
 case "$chosen" in
 "󰌾 Lock")
-  if command -v betterlockscreen &>/dev/null; then
-    betterlockscreen -l
-  elif command -v i3lock &>/dev/null; then
-    i3lock
-  else
-    echo "No lockscreen encontrado." >&2
-  fi
+  glich_lock.sh
   ;;
 "󰍃 Logout")
   pkill -KILL -u "$USER"
